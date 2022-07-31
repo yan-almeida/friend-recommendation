@@ -1,0 +1,30 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "projects": {
+    "in-memory-repository": {
+      "type": "library",
+      "root": "libs/in-memory-repository",
+      "entryFile": "index",
+      "sourceRoot": "libs/in-memory-repository/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/in-memory-repository/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "classValidatorShim": true,
+          "introspectComments": true,
+          "dtoFileNameSuffix": [
+            ".dto.ts"
+          ]
+        }
+      }
+    ],
+    "webpack": true
+  }
+}
