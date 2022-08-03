@@ -26,6 +26,13 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+--- 
+
+[Technical testing](./docs/tech_test.pdf) consists of: implementing a system that allows a person to obtain suggestions for new
+friends based on existing friendships.
+
+---
+
 ## Installation
 
 ```bash
@@ -57,6 +64,15 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+---
+## Unit tests:
+![unit tests](./docs/unit_tests.png)
+
+## E2E tests:
+![unit tests](./docs/e2e_tests.png)
+
+---
 
 ## Support
 
