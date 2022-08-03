@@ -1,3 +1,3 @@
 export const appContants = {
-  appName: 'FriendRecommender',
+  appName: 'FriendRecommendation',
 };

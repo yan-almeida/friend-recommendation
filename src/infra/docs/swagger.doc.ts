@@ -16,7 +16,7 @@ export class Swagger {
 
   private static get internalConfigs() {
     const config = new DocumentBuilder()
-      .setTitle('WEB API - Friend Recommender')
+      .setTitle('WEB API - Friend Recommendation')
       .setDescription('API responsável: Yan Almeida')
       .setVersion('1.0')
       .build();
@@ -29,7 +29,7 @@ export class Swagger {
       swaggerOptions: {
         persistAuthorization: true,
       },
-      customSiteTitle: 'Friend Recommender - API Docs',
+      customSiteTitle: 'Friend Recommendation - API Docs',
     };
 
     const uri = 'swagger';

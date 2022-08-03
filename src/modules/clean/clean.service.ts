@@ -1,26 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCleanDto } from './dto/create-clean.dto';
-import { UpdateCleanDto } from './dto/update-clean.dto';
+import { PersonService } from '../person/person.service';
+import { RelationshipService } from '../relationship/relationship.service';
 
 @Injectable()
 export class CleanService {
-  create(createCleanDto: CreateCleanDto) {
-    return 'This action adds a new clean';
-  }
+  constructor(
+    private readonly personService: PersonService,
+    private readonly relationshipService: RelationshipService,
+  ) {}
 
-  findAll() {
-    return `This action returns all clean`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} clean`;
-  }
-
-  update(id: number, updateCleanDto: UpdateCleanDto) {
-    return `This action updates a #${id} clean`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} clean`;
+  async clean(): Promise<void> {
+    await this.personService.clean();
+    await this.relationshipService.clean();
   }
 }
