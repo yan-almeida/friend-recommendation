@@ -1,12 +1,12 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { length } from 'class-validator';
 import {
   BadRequestResponse,
   NotFoundResponse,
   OkResponse,
 } from '../../infra/docs/decorators';
 import { MutualFriendsDto } from './dto/mutual-friends.dto';
+import { RecommendationParamDto } from './dto/recommendation-param.dto';
 import { RecommendationService } from './recommendation.service';
 
 @Controller('recommendations')
@@ -21,12 +21,8 @@ export class RecommendationController {
   @NotFoundResponse()
   @BadRequestResponse()
   recommendations(
-    @Param('cpf', {
-      transform(value) {
-        length(value, 11, 11);
-      },
-    })
-    cpf: string,
+    @Param()
+    { cpf }: RecommendationParamDto,
   ): Promise<MutualFriendsDto[]> {
     return this.recommendationService.recommendations(cpf);
   }

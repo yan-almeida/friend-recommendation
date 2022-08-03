@@ -33,32 +33,27 @@ describe('AppController (e2e)', () => {
   // });
 
   it('/recommendations/:cpf (GET)', async () => {
-    const cpfsToCreate = [
-      {
-        cpf: '01234567891',
-      },
-      {
-        cpf: '01234567892',
-      },
-      {
-        cpf: '01234567893',
-      },
-      {
-        cpf: '01234567894',
-      },
-      {
-        cpf: '01234567895',
-      },
-    ];
-
-    await request(app.getHttpServer()).post('/clean').expect(204);
-
-    for (const cpf of cpfsToCreate) {
-      await request(app.getHttpServer())
-        .post('/people')
-        .send({ cpf: '01234567891', name: `name-of-${cpf}` })
-        .expect(201);
-    }
+    // people
+    await request(app.getHttpServer())
+      .post('/people')
+      .send({ cpf: '01234567891', name: 'name-of' })
+      .expect(201);
+    await request(app.getHttpServer())
+      .post('/people')
+      .send({ cpf: '01234567892', name: 'name-of' })
+      .expect(201);
+    await request(app.getHttpServer())
+      .post('/people')
+      .send({ cpf: '01234567893', name: 'name-of' })
+      .expect(201);
+    await request(app.getHttpServer())
+      .post('/people')
+      .send({ cpf: '01234567894', name: 'name-of' })
+      .expect(201);
+    await request(app.getHttpServer())
+      .post('/people')
+      .send({ cpf: '01234567895', name: 'name-of' })
+      .expect(201);
 
     // relationship
     await request(app.getHttpServer())
@@ -68,7 +63,6 @@ describe('AppController (e2e)', () => {
         followsCpf: '01234567892',
       })
       .expect(201);
-
     await request(app.getHttpServer())
       .post('/relationships')
       .send({
@@ -101,8 +95,8 @@ describe('AppController (e2e)', () => {
       .expect(201);
 
     const response = await request(app.getHttpServer())
-      .get(`/recommendations/${cpfsToCreate[0].cpf}`)
-      .expect(201);
+      .get('/recommendations/01234567891')
+      .expect(200);
 
     expect(response.body).toEqual([
       {

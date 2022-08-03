@@ -27,7 +27,7 @@ export class PersonService {
     const person = await this.personRepository.findOne({ cpf });
 
     if (!person) {
-      throw new NotFoundException('Person not found.');
+      throw new NotFoundException(`Person not found with cpf ${cpf}`);
     }
 
     return person;

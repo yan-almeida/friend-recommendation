@@ -77,7 +77,7 @@ describe('PersonService', () => {
       mockRepository.findOne.mockReturnValue(null);
 
       await expect(personService.findOne(personMock.cpf)).rejects.toThrowError(
-        'Person not found.',
+        `Person not found with cpf ${personMock.cpf}`,
       );
       expect(mockRepository.findOne).toHaveBeenCalledTimes(1);
     });

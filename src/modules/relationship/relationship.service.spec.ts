@@ -69,12 +69,16 @@ describe('RelationshipService', () => {
 
     it('should throws an error a not found exception when do not find person or person to relationship', async () => {
       mockPersonService.findOne.mockRejectedValue(
-        new NotFoundException('Person not found.'),
+        new NotFoundException(
+          `Person not found with cpf ${createRelationshipDto.followsCpf}`,
+        ),
       );
 
       await expect(
         relationshipService.create(createRelationshipDto),
-      ).rejects.toThrowError('Person not found.');
+      ).rejects.toThrowError(
+        `Person not found with cpf ${createRelationshipDto.followsCpf}`,
+      );
       expect(mockPersonService.findOne).toHaveBeenCalledTimes(1);
       expect(mockRepository.create).not.toHaveBeenCalled();
     });
