@@ -33,7 +33,7 @@ friends based on existing friendships.
 
 Open [http://[::1]:3000/swagger](http://[::1]:3000/swagger) with your browser to see the Swagger UI.
 
-> Check [online version](http://friendsrecommendation-env.eba-p7qntup2.us-east-1.elasticbeanstalk.com/swagger)!
+> Check [online version](http://friends-recommendation.us-east-1.elasticbeanstalk.com/swagger)!
 ---
 
 ## Installation
