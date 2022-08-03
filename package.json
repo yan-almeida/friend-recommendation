@@ -1,6 +1,6 @@
 {
   "name": "friend-recommendation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Implementation of a system that allows a person to obtain suggestions for new friends based on existing friendships.",
   "author": "Yan Almeida",
   "private": true,
@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "deploy": "npm ci && npm run build && npm run start:prod"
+    "deploy": "npm i --legacy-peer-deps && npm ci && npm run build && npm run start:prod"
   },
   "dependencies": {
     "@nestjs-addons/in-memory-db": "^3.0.3",
