@@ -1,7 +1,7 @@
 {
   "name": "friend-recommendation",
   "version": "0.0.1",
-  "description": "",
+  "description": "Implementation of a system that allows a person to obtain suggestions for new friends based on existing friendships.",
   "author": "Yan Almeida",
   "private": true,
   "license": "UNLICENSED",
