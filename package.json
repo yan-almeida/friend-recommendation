@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "deploy": "npm i --legacy-peer-deps && npm ci && npm run build && npm run start:prod"
+    "deploy": "npm i --legacy-peer-deps && npm ci && npm run build && PORT=8080 npm run start:prod"
   },
   "dependencies": {
     "@nestjs-addons/in-memory-db": "^3.0.3",
