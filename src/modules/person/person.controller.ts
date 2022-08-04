@@ -26,7 +26,10 @@ export class PersonController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  @CreatedResponse({ type: PersonDto })
+  @CreatedResponse({
+    description: 'Create a person.',
+    type: PersonDto,
+  })
   @BadRequestResponse()
   @NotFoundResponse()
   @ConflictResponse()
@@ -35,7 +38,10 @@ export class PersonController {
   }
 
   @Get(':cpf')
-  @OkResponse({ type: PersonDto })
+  @OkResponse({
+    description: 'Find a person.',
+    type: PersonDto,
+  })
   @NotFoundResponse()
   findOne(@Param('cpf') cpf: string): Promise<PersonDto> {
     return this.personService.findOne(cpf);

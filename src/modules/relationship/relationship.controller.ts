@@ -18,7 +18,10 @@ export class RelationshipController {
   @HttpCode(HttpStatus.CREATED)
   @BadRequestResponse()
   @NotFoundResponse()
-  @CreatedResponse({ type: RelationshipDto })
+  @CreatedResponse({
+    description: 'Create a relationship.',
+    type: RelationshipDto,
+  })
   create(
     @Body() createRelationshipDto: CreateRelationshipDto,
   ): Promise<RelationshipDto> {

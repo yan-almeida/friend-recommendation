@@ -16,6 +16,8 @@ export class RecommendationController {
 
   @Get(':cpf')
   @OkResponse({
+    description:
+      'Find friends of friends by recommendation (only if you are not be friends).',
     type: [MutualFriendsDto],
   })
   @NotFoundResponse()

@@ -10,7 +10,7 @@ export class CleanController {
 
   @Post()
   @HttpCode(HttpStatus.NO_CONTENT)
-  @NoContentResponse()
+  @NoContentResponse({ description: 'Clean all data in app context.' })
   clean(): Promise<void> {
     return this.cleanService.clean();
   }
