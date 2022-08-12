@@ -28,7 +28,7 @@
 
 --- 
 
-[Technical testing](./docs/tech_test.pdf) consists of: implementing a system that allows a person to obtain suggestions for new
+A implementing a system that allows a person to obtain suggestions for new
 friends based on existing friendships.
 
 Open [http://[::1]:3000/swagger](http://[::1]:3000/swagger) with your browser to see the Swagger UI.
